@@ -13,11 +13,11 @@
     <!-- Google Font (font-family: 'Poppins', sans-serif;) -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700" rel="stylesheet">
 
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/plugins.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+    {{ 'plugins.css' | asset_url | stylesheet_tag }}
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
 
-    <link rel="stylesheet" href="../assets/css/custom.css">
     {{content_for_header}}
 </head>
 <body>
@@ -45,13 +45,14 @@
     <h1> This is footer </h1>
 
     {% comment %} {% sections 'footer-group' %} {% endcomment %}
+ 
 
 
-    <script defer src="../assets/js/modernizr-3.6.0.min.js"></script>
-    <script defer src="../assets/js/jquery.min.js"></script>
-    <script defer src="../assets/js/popper.min.js"></script>
-    <script defer src="../assets/js/bootstrap.min.js"></script>
-    <script defer src="../assets/js/plugins.js"></script>
-    <script defer src="../assets/js/main.js"></script>
+    <script defer="defer" src="{{ 'modernizr-3.6.0.min.js' | asset_url }}" ></script>
+    <script defer="defer" src="{{ 'jquery.min.js' | asset_url }}" ></script>
+    <script defer="defer" src="{{ 'popper.min.js' | asset_url }}" ></script>
+    <script defer="defer" src="{{ 'bootstrap.min.js' | asset_url }}" ></script>
+    <script defer="defer" src="{{ 'plugins.js' | asset_url }}" ></script>
+    <script defer="defer" src="{{ 'main.js' | asset_url }}" ></script>
 </body>
 </html>
